@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       *{
+            -webkit-box-sizing: border-box;
+                    box-sizing: border-box;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        section{
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+        }
+        #maindiv{
+            position: relative;
+            
+            width: 600px;
+            height: 600px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+        }
+       
+        .div{
+            width: 200px;
+            height: 200px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+            font-weight: bold;
+            border: 5px solid black;
+            font-size: 100px;
+            text-align: center;
+            caret-color: transparent;
+        }
+     
+        
+        #div2{
+            position: absolute;
+            background-color: black;
+            color: white;
+            border: 10px solid black;
+            height: 400px;
+            width: 400px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+            z-index: 15;
+            font-size: 55px;
+            display: none;
+        }
+        
+    </style>
+</head>
+<body>
+    <section>
+         
+        <div id="maindiv">
+            <div class="div" id="A1" type="text" ></div>
+            <div class="div" id="A2" type="text" ></div>
+            <div class="div" id="A3" type="text" ></div>
+            <div class="div" id="A4" type="text" ></div>
+            <div class="div" id="A5" type="text" ></div>
+            <div class="div" id="A6" type="text" ></div>
+            <div class="div" id="A7" type="text" ></div>
+            <div class="div" id="A8" type="text" ></div>
+            <div class="div" id="A9" type="text" ></div>
+        </div> 
+        <div id="div2">
+            <p id="p"></p>
+            <a href="dom.html">RESET</a>
+        </div>  
+    </section>
+<script>
+    
+
+    var clicked = false;
+
+    function doSomething(i)
+    {
+    if(clicked)
+    {
+        if (!i.textContent)
+        (i.textContent = 'O') && (i.style.color = 'hotPink')
+        
+       
+
+    }
+    else
+    {
+        // alert('fafas')
+        if (!i.textContent)
+        (i.textContent = 'X') && (i.style.color = 'indigo')
+        
+    }
+    clicked = !clicked;
+    }
+
+    
+    const divebi = document.getElementsByClassName('div')
+    
+    const divs = Array.from(divebi)
+   
+
+    
+    const a1 =document.getElementById('A1')
+    const a2 =document.getElementById('A2')
+    const a3 =document.getElementById('A3')
+    const a4 =document.getElementById('A4')
+    const a5 =document.getElementById('A5')
+    const a6 =document.getElementById('A6')
+    const a7 =document.getElementById('A7')
+    const a8 =document.getElementById('A8')
+    const a9 =document.getElementById('A9')
+    const maindiv = document.getElementById('maindiv')
+    const p = document.getElementById('p')
+    
+    divs.forEach((s) => {
+        s.addEventListener('click',() => {
+            doSomething(s)
+            console.log(a1.value)
+            if( a1.textContent === 'X' && a2.textContent == 'X' && a3.textContent === 'X'){
+                div2.style.display = 'flex'
+                maindiv.style.opacity ='0.5'
+                p.innerHTML = 'Player X wins'
+
+    }
+    else if(a4.textContent === 'X' && a5.textContent === 'X' && a6.textContent === 'X')
+    {
+        div2.style.display = 'flex'
+                maindiv.style.opacity ='0.5'
+                p.innerHTML = 'Player X wins'
+    }
+    else if(a7.textContent === 'X' && a8.textContent === 'X' && a9.textContent === 'X')
+    {
+        div2.style.display = 'flex'
+                maindiv.style.opacity ='0.5'
+                p.innerHTML = 'Player X wins'    }
+    else if(a1.textContent === 'X' && a4.textContent === 'X' && a7.textContent === 'X')
+    {
+        div2.style.display = 'flex'
+                maindiv.style.opacity ='0.5'
+                p.innerHTML = 'Player X wins'    }
+    else if(a2.textContent === 'X' && a5.textContent === 'X' && a8.textContent === 'X')
+    {
+        div2.style.display = 'flex'
+                maindiv.style.opacity ='0.5'
+                p.innerHTML = 'Player X wins'    }
+    else if(a3.textContent === 'X' && a6.textContent === 'X' && a9.textContent === 'X')
+    {
+        div2.style.display = 'flex'
+                maindiv.style.opacity ='0.5'
+                p.innerHTML = 'Player X wins'    }
+    else if(a3.textContent === 'X' && a6.textContent === 'X' && a9.textContent === 'X')
+    {
+        div2.style.display = 'flex'
+                maindiv.style.opacity ='0.5'
+                p.innerHTML = 'Player X wins'    }
+    else if(a1.textContent === 'X' && a5.textContent === 'X' && a9.textContent === 'X')
+    {
+        div2.style.display = 'flex'
+                maindiv.style.opacity ='0.5'
+                p.innerHTML = 'Player X wins'    }
+    else if(a3.textContent === 'X' && a5.textContent === 'X' && a7.textContent === 'X')
+    {
+        div2.style.display = 'flex'
+                maindiv.style.opacity ='0.5'
+                p.innerHTML = 'Player X wins'    };
+
+    if( a1.textContent === 'O' && a2.textContent === 'O' && a3.textContent === 'O'){
+        div2.style.display = 'flex'
+                maindiv.style.opacity ='0.5'
+                p.innerHTML = 'Player O wins'
+    }
+    else if(a4.textContent === 'O' && a5.textContent === 'O' && a6.textContent === 'O')
+    {
+        div2.style.display = 'flex'
+                maindiv.style.opacity ='0.5'
+                p.innerHTML = 'Player O wins'
+    }
+    else if(a7.textContent === 'O' && a8.textContent === 'O' && a9.textContent === 'O')
+    {
+        div2.style.display = 'flex'
+                maindiv.style.opacity ='0.5'
+                p.innerHTML = 'Player O wins'
+    }
+    else if(a1.textContent === 'O' && a4.textContent === 'O' && a7.textContent === 'O')
+    {
+        div2.style.display = 'flex'
+                maindiv.style.opacity ='0.5'
+                p.innerHTML = 'Player O wins'    }
+    else if(a2.textContent === 'O' && a5.textContent === 'O' && a8.textContent === 'O')
+    {
+        div2.style.display = 'flex'
+                maindiv.style.opacity ='0.5'
+                p.innerHTML = 'Player O wins'    }
+    else if(a3.textContent === 'O' && a6.textContent === 'O' && a9.textContent === 'O')
+    {
+        div2.style.display = 'flex'
+                maindiv.style.opacity ='0.5'
+                p.innerHTML = 'Player O wins'
+    }
+    else if(a3.textContent === 'O' && a6.textContent === 'O' && a9.textContent === 'O')
+    {
+        div2.style.display = 'flex'
+                maindiv.style.opacity ='0.5'
+                p.innerHTML = 'Player O wins'
+    }
+    else if(a1.textContent === 'O' && a5.textContent === 'O' && a9.textContent === 'O')
+    {
+        div2.style.display = 'flex'
+                maindiv.style.opacity ='0.5'
+                p.innerHTML = 'Player O wins'
+    }
+    else if(a3.textContent === 'O' && a5.textContent === 'O' && a7.textContent === 'O')
+    {
+        div2.style.display = 'flex'
+                maindiv.style.opacity ='0.5'
+                p.innerHTML = 'Player O wins'
+        
+    }
+    else if ((a1.textContent ==='X' || a1.textContent ==='O') && (a2.textContent ==='X' || a2.textContent ==='O') && (a3.textContent ==='X' || a3.textContent ==='O') && (a4.textContent ==='X' || a4.textContent ==='O') && (a5.textContent ==='X' || a5.textContent ==='O') && (a6.textContent ==='X' || a6.textContent ==='O') && (a7.textContent ==='X' || a7.textContent ==='O') && (a8.textContent ==='X' || a8.textContent ==='O') && (a9.textContent ==='X' || a9.textContent ==='O')){
+    div2.style.display = 'flex'
+                maindiv.style.opacity ='0.5'
+                p.innerHTML = 'Try again'
+    
+        }
+
+        })})
+    
+    
+
+
+
+    
+
+
+</script>
+</body>
+</html>
